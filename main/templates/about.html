@@ -1,0 +1,37 @@
+<!-- main/templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About The Talking Box System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+     <!-- Header section -->
+     <header>
+        <img src="{{ '/Users/hadija/Talking Box Project Trial/talking_box_project/media/images/TalkingBox1.png' }}" alt="About Image">
+        <h1>About The Talking Box System</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <p>Welcome to the Talking Box System, where we have a commitment to community development and sustainable change. The transformative initiative, the Talking Box, has been a powerful tool for community members to articulate their challenges, enabling us to address and resolve these issues effectively. Traditionally, this program has relied on physical submissions of written concerns. Recognizing the potential for greater impact, we are excited to introduce a digital version of the Talking Box program through this website, aiming to boost connectivity, inclusivity, and efficiency.</p>
+
+            <p>Based in the vibrant Kibra Constituency, the Talking Box was created by Polycom Development Project, now Polycom Girls, and they were dedicated to advancing the United Nations' Sustainable Development Goals through empowerment and advocacy. The manual system of the Talking Box program has successfully gathered valuable data for their advocacy and problem-solving efforts. However, with the growing volume of issues reported, we see the need for a more efficient, scalable solution. Our vision is to modernize and expand the Talking Box program by creating a digital platform that simplifies the process for community members to report their issues. This digital transformation will reduce the reliance on physical documentation and paper usage, extending the program's reach to those who may not have access to physical boxes or the time to visit Polycom's office. This ensures that every voice in the community can be heard.</p>
+
+            <p>The digital system streamlines the reporting, tracking, and resolution of community issues, providing timely updates and ensuring safe storage of all reported concerns. It is an intuitive platform where community members can easily submit issues at their convenience, with detailed forms for reporting. A robust database centralizes data storage, allowing for real-time access to reported issues and enhancing scalability. Our personnel will have access to an advanced interface to track, assign, and update issues efficiently, supported by an automated notification system to inform community members of status changes via SMS or email. The interface for issue tracking also allows members to monitor the progress of their reported concerns and provide feedback, ensuring transparency and accountability.</p>
+
+            <p>Transitioning to this digital platform for the Talking Box program will significantly reduce paper usage and broaden our reach within the community. This approach saves time by enabling instant data access and ensures that urgent issues are addressed promptly, aligning perfectly with our mission to enhance community development through innovative and sustainable solutions. We are thrilled to embrace this digital future, enhancing our ability to connect with and serve the community more effectively. Thank you for joining us on this journey towards a more connected and empowered Kibra Constituency.</p>
+        </main>
+    </div>
+    <script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>

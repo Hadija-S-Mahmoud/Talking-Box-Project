@@ -1,0 +1,87 @@
+/* main/static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #020298;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #e7cd07;
+}
+
+/* Logo styling */
+header .logo {
+    height: 100px;
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+}
+
+/* Header text alignment and padding */
+header {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Top-right menu links */
+header .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Hover effect for menu links */
+header .menu a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #020298;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #e7cd07;
+    color: #020298;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}

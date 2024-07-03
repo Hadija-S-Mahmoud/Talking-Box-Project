@@ -1,0 +1,28 @@
+<!-- main/templates/form_success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Submitted</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <h1>Issue Submitted Successfully</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <p>Thank you for reporting the issue. We have received your issue: "{{ issue }}" from the "{{ ward }}" ward.</p>
+        <p>We will address it as soon as possible. Thank you for your contribution to improving the community.</p>
+    </main>
+</body>
+</html>

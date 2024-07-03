@@ -1,0 +1,32 @@
+<!-- main/templates/emergency.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/emergency.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <h1>Emergency Contacts</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <p>If you have an emergency, please contact the following:</p>
+        <ul>
+            <li>Police Station: 123-456-7890</li>
+            <li>Ambulance: 098-765-4321</li>
+            <li>Fire Department: 111-222-3333</li>
+        </ul>
+    </main>
+</body>
+</html>

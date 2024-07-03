@@ -1,0 +1,28 @@
+<!-- main/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <h1>Welcome to the Talking Box System</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <p>Welcome to the Talking Box System, where we are committed to improving community welfare.</p>
+        <a href="{% url 'submit_issue' %}" class="btn">Report an Issue</a>
+    </main>
+</body>
+</html>

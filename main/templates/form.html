@@ -1,0 +1,63 @@
+<!-- main/templates/form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Issue</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <script src="{% static 'js/form.js' %}" defer></script>
+
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <h1>Report An Issue</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <!-- Form for reporting an issue -->
+    <form id="reportForm" action="{% url 'submit_issue' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="issue">Issue:</label><br>
+        <textarea id="issue" name="issue" required></textarea><br>
+
+        <label for="ward">Ward:</label><br>
+        <select id="ward" name="ward" required>
+            <option value="">Select Ward</option>
+            <option value="Sarang'ombe">Sarang'ombe</option>
+            <option value="Makina">Makina</option>
+            <option value="Lindi">Lindi</option>
+            <option value="Woodley">Woodley</option>
+            <option value="Laini Saba">Laini Saba</option>
+        </select><br>
+
+        <label for="imageOption">Image Option:</label><br>
+        <input type="radio" id="uploadImage" name="imageOption" value="upload" checked>
+        <label for="uploadImage">Upload Image</label>
+        <input type="radio" id="captureImage" name="imageOption" value="capture">
+        <label for="captureImage">Capture Image</label><br>
+
+        <div id="uploadSection">
+            <label for="image">Upload Image:</label><br>
+            <input type="file" id="image" name="image" accept="image/*"><br>
+        </div>
+
+        <div id="captureSection" style="display: none;">
+            <label for="camera">Capture Image:</label><br>
+            <input type="file" id="camera" name="camera" accept="image/*" capture="camera"><br>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+   
+    
+</body>
+</html>
