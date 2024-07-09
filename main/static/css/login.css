@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0c0e8d;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fada0e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    color: #fada0e;
+}
+
+form {
+    padding: 20px;
+}
+
+form label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="submit"],
+form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+form input[type="submit"],
+form button,
+.adminlogin-button, .signup-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+form button:hover,
+.adminlogin-button:hover, .signup-button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    margin: 10px 0;
+}

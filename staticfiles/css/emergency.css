@@ -1,13 +1,14 @@
 /* main/static/css/emergency.css */
+/* Basic styling for the body */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    text-align: center;
+    background-color: #e7cd07;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
+/* Header styling */
 header {
     background-color: #020298;
     color: white;
@@ -24,7 +25,6 @@ header h1 {
     font-size: 2.5em;
     color: #e7cd07;
 }
-
 /* Logo styling */
 header .logo {
     height: 100px;
@@ -32,8 +32,6 @@ header .logo {
     float: left;
     margin-right: 20px;
 }
-
-/* Header text alignment and padding */
 header {
     text-align: center;
     padding-bottom: 20px;
@@ -51,19 +49,53 @@ header .menu a:hover {
     text-decoration: underline;
 }
 
-main {
+/* Contacts container */
+.contacts {
+    margin: 20px auto;
+    width: 80%;
     max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
+/* Individual contact item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Contact icon styling */
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Contact info container */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Contact link styling */
+.contact-link {
+    text-decoration: none;
+    color: #020298;
+    font-size: 16px;
+}
+
+/* Contact name styling */
+.contact-info span {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+/* Contact link hover effect */
+.contact-link:hover {
+    text-decoration: underline;
 }

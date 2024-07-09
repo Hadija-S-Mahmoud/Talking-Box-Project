@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Tracker</title>
+    <link rel="stylesheet" href="{% static 'css/issues.css' %}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const issueSocket = new WebSocket(
+                'ws://' + window.location.host + '/ws/issues/'
+            );
+
+            issueSocket.onmessage = function(e) {
+                const data = JSON.parse(e.data);
+                const issueId = data.issue_id;
+                const newStatus = data.status;
+
+                // Update the issue status on the page
+                const issueElement = document.querySelector(`#issue-${issueId}`);
+                if (issueElement) {
+                    issueElement.querySelector('.issue-status').textContent = `Status: ${newStatus}`;
+                }
+            };
+
+            issueSocket.onclose = function(e) {
+                console.error('Issue WebSocket closed unexpectedly');
+            };
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <h1>Reported Issues</h1>
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="{% url 'adminlogin' %}">Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="issue-list">
+            {% for issue in issues %}
+                <div id="issue-{{ issue.id }}" class="issue">
+                    <h2>{{ issue.issue }}</h2>
+                    <p>{{ issue.description }}</p>
+                    <p class="issue-status">Status: {{ issue.status }}</p>
+                    <p>Reported by: 
+                        {% if issue.reporter %}
+                            {{ issue.reporter.username }}
+                        {% else %}
+                            Anonymous
+                        {% endif %}
+                    </p>
+                    <p>Ward: {{ issue.ward }}</p>
+                    
+                    <form method="post" action="{% url 'issues' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="issue_id" value="{{ issue.id }}">
+                        {{ form.content.label_tag }}
+                        {{ form.content }}
+                        <button type="submit">Submit Feedback</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <script src="{% static 'js/issues.js' %}"></script>
+</body>
+</html>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/emergency.css' %}">
 </head>
 <body>
+    <!-- Header section -->
     <header>
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
         <h1>Emergency Contacts</h1>
@@ -20,13 +21,64 @@
         </div>
     </header>
 
-    <main>
-        <p>If you have an emergency, please contact the following:</p>
-        <ul>
-            <li>Police Station: 123-456-7890</li>
-            <li>Ambulance: 098-765-4321</li>
-            <li>Fire Department: 111-222-3333</li>
-        </ul>
-    </main>
+    <div class="contacts">
+        <div class="contact-item">
+            <img src="{% static 'images/POLYCOM-logo.jpeg' %}" alt="Polycom Office" class="contact-icon">
+            <div class="contact-info">
+                <span>Polycom Office</span>
+                <a href="tel:0113111222" class="contact-link">0112111079</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/redcross.png' %}" alt="Red Cross Ambulance" class="contact-icon">
+            <div class="contact-info">
+                <span>Red Cross Ambulance</span>
+                <a href="tel:1199" class="contact-link">1199</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/stjohn.png' %}" alt="St.John Ambulance" class="contact-icon">
+            <div class="contact-info">
+                <span>St.John Ambulance</span>
+                <a href="tel:0721611555" class="contact-link">0721611555</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/fire.png' %}" alt="Fire Response Team" class="contact-icon">
+            <div class="contact-info">
+                <span>Fire Response Team</span>
+                <a href="tel:0202344599" class="contact-link">0202344599</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/disaster.png' %}" alt="Disaster Management" class="contact-icon">
+            <div class="contact-info">
+                <span>Disaster Management</span>
+                <a href="tel:0202222181" class="contact-link">0202222181</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/childline.png' %}" alt="Child Line" class="contact-icon">
+            <div class="contact-info">
+                <span>Child Line</span>
+                <a href="tel:116" class="contact-link">116</a>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <img src="{% static 'images/chief.png' %}" alt="Kibra Chief" class="contact-icon">
+            <div class="contact-info">
+                <span>Chief</span>
+                <a href="tel:0701117076" class="contact-link">0701117076</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/emergency.js' %}"></script>
 </body>
 </html>

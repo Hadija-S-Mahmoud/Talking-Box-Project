@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issue Submitted</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form_success.css' %}">
 </head>
 <body>
     <header>
@@ -20,9 +20,12 @@
         </div>
     </header>
 
+    <div class="container">
     <main>
         <p>Thank you for reporting the issue. We have received your issue: "{{ issue }}" from the "{{ ward }}" ward.</p>
         <p>We will address it as soon as possible. Thank you for your contribution to improving the community.</p>
     </main>
+    </div>
+
 </body>
 </html>

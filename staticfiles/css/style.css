@@ -4,10 +4,48 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e7cd07;
     color: #333;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Sidebar styles */
+.sidebar {
+    position: sticky;
+    top: 100px;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #e7cd07;
+    box-sizing: border-box;
+    padding: 20px;
+   
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #020298;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background: #e7cd07;
+    color: #020298;
+}
+
+/* Header styles */
 header {
     background-color: #020298;
     color: white;
@@ -19,27 +57,14 @@ header {
     top: 0;
     z-index: 1000;
 }
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #e7cd07;
-}
 
-/* Logo styling */
+/* Header text alignment and padding */
 header .logo {
     height: 100px;
     width: 200px;
-    float: left;
     margin-right: 20px;
 }
 
-/* Header text alignment and padding */
-header {
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-/* Top-right menu links */
 header .menu a {
     color: white;
     text-decoration: none;
@@ -51,37 +76,104 @@ header .menu a:hover {
     text-decoration: underline;
 }
 
+/* Main content styles */
 main {
-    max-width: 800px;
-    margin: 30px auto;
+    margin-left: 200px; /* Adjust based on the width of the sidebar */
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-bottom: 1px;
+    text-align: center;
+    margin-top: -260px;
 }
 
-.btn {
-    display: inline-block;
+/* Section styling */
+.section {
+    padding: 1px 0;
+    border-bottom: 1px #e7cd07;
+}
+
+/* Hero text styling */
+.hero-text h1, .hero-text h2 {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.hero-text p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Button styles */
+.login-signup {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-button, .signup-button, .adminlogin-button, .emergency-button, .about-button {
+    background-color: #020298;
+    color: white;
     padding: 10px 20px;
-    background: #020298;
-    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
 }
 
-.btn:hover {
-    background: #e7cd07;
-    color: #020298;
+/* Hover effect for buttons */
+.login-button:hover, .signup-button:hover, .adminlogin-button:hover, .emergency-button:hover, .about-button:hover {
+    background-color: #0303e9;
 }
 
+/* Heading styles */
 h1 {
     font-size: 2em;
+    text-align: center;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
+    text-align: center;
 }
 
 ul {
     list-style: none;
     padding: 0;
 }
+
+/* Footer styles */
+footer {
+    background-color: #020298;
+    color: #fff;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Social media links styling */
+.footer-content .social-media ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-content .social-media ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-content .social-media ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-content ul li a {
+    color: white;
+    text-decoration: none;
+}
+

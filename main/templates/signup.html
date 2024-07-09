@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <script src="{% static 'js/signup.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" style="height: 200px; width: 300px">
+    </header>
+    <div class="container">
+        <form id="signupForm" action="{% url 'signup' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="first_name">First Name:</label><br>
+            <input type="text" id="first_name" name="first_name" required><br>
+
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" id="last_name" name="last_name" required><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]+" required><br>
+
+            <label for="ward">Ward:</label><br>
+            <select id="ward" name="ward" required>
+                <option value="">Select Ward</option>
+                <option value="Ward 1">Sarang'ombe</option>
+                <option value="Ward 2">Makina</option>
+                <option value="Ward 3">Lindi</option>
+                <option value="Ward 4">Woodley</option>
+                <option value="Ward 5">Laini Saba</option>
+            </select><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="confirm_password">Confirm Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+            <input type="submit" value="Sign Up">
+            <div id="form-message"></div>
+        </form>
+    </div>
+</body>
+</html>
