@@ -1,0 +1,36 @@
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Issue</th>
+            <th>Ward</th>
+            <th>Status</th>
+            <th>Reported By</th>
+            <th>Address</th>
+            {% if request.user.is_staff %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for issue in issues %}
+        <tr>
+            <td>{{ issue.category }}</td>
+            <td>{{ issue.issue }}</td>
+            <td>{{ issue.ward }}</td>
+            <td>{{ issue.status }}</td>
+            <td>{{ issue.reported_by.username }}</td>
+            <td>{{ issue.address }}</td>
+            {% if request.user.is_staff %}
+            <td>
+                <a href="{% url 'view_progress_report' issue.id %}">Update Status / Progress Report</a>
+            </td>
+            {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="7">No issues found</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

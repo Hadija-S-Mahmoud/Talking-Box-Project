@@ -1,0 +1,102 @@
+/* progress_report.css */
+
+body {
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    line-height: 1.6; /* Set line height for readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #e7cd07; /* Yellow background color */
+    color: #333; /* Dark text color for contrast */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange elements in a column */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Header styles */
+header {
+    background-color: #020298; /* Dark blue background for the header */
+    color: #e7cd07; /* Yellow text color */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space between logo and menu */
+    position: sticky; /* Stick the header to the top */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    width: 100%; /* Full width for the header */
+}
+
+/* Header title styling */
+header h1 {
+    margin: 0; /* Remove default margins */
+    font-size: 2.5em; /* Larger font size for the header */
+    color: #e7cd07; /* Yellow text color for the header */
+}
+
+/* Top-right menu links styling */
+header .menu a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Space between the links */
+}
+
+/* Hover effect for menu links */
+header .menu a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Main content styles */
+main {
+    margin: 20px auto; /* Center the main content with vertical margin */
+    max-width: 800px; /* Set a maximum width for the content */
+    background: #fff; /* White background color */
+    padding: 20px; /* Add padding inside the main content */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light grey border */
+}
+
+/* Progress Report Page Header */
+h1 {
+    color: #020298; /* Dark blue color for the page header */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+/* Feedback Form Styles */
+form {
+    margin-top: 10px; /* Space between issue details and the feedback form */
+}
+
+form textarea {
+    width: 100%; /* Full width for the textarea */
+    padding: 10px; /* Padding inside the textarea */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light grey border */
+}
+
+form button {
+    margin-top: 10px; /* Space above the button */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background: #020298; /* Dark blue background color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for feedback form button */
+form button:hover {
+    background: #0301b4; /* Slightly lighter blue on hover */
+}
+
+/* Back to Issue List Link */
+a {
+    text-decoration: none; /* Remove underline from the link */
+    color: #020298; /* Dark blue color for the link */
+    margin-top: 20px; /* Space above the link */
+    display: inline-block; /* Make the link a block element */
+}
+
+/* Hover effect for the back link */
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

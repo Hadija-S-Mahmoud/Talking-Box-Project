@@ -1,112 +1,143 @@
 /* issues.css */
+
+/* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #e7cd07;
-    color: #333;
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    line-height: 1.6; /* Set line height for readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #e7cd07; /* Yellow background color */
+    color: #333; /* Dark text color for contrast */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange elements in a column */
 }
 
 /* Header styles */
 header {
-    background-color: #020298;
-    color: #e7cd07;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #020298; /* Dark blue background for the header */
+    color: #e7cd07; /* Yellow text color */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space between logo and menu */
+    position: sticky; /* Stick the header to the top */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #e7cd07;
+    margin: 0; /* Remove default margins */
+    font-size: 2.5em; /* Larger font size for the header */
+    color: #e7cd07; /* Yellow text color for the header */
 }
 
-/* Header text alignment and padding */
+/* Logo styling */
 header .logo {
-    height: 100px;
-    width: 200px;
-    margin-right: 20px;
+    height: 100px; /* Set a fixed height for the logo */
+    width: 200px; /* Set a fixed width for the logo */
+    margin-right: 20px; /* Space between the logo and the menu */
 }
 
+/* Top-right menu links styling */
 header .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Space between the links */
 }
 
 /* Hover effect for menu links */
 header .menu a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline links on hover */
 }
 
 /* Main content styles */
 main {
     margin: 0 auto; /* Center the main content */
     max-width: 800px; /* Set a maximum width for the content */
-    background: #e7cd07; /* Set the background color */
-    padding: 20px; /* Add some padding */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: #e7cd07; /* Yellow background color */
+    padding: 20px; /* Add padding inside the main content */
 }
 
 /* Issue list styles */
 .issue-list {
-    padding: 20px;
+    padding: 20px; /* Add padding inside the issue list */
 }
 
+/* Individual issue box styling */
 .issue {
-    border: 1px solid #ddd;
-    border-radius: 100px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #fff; /* Add a background color for the issue box */
+    border: 1px solid #ddd; /* Light grey border for the issue box */
+    border-radius: 0; /* Square corners */
+    margin-bottom: 10px; /* Space between issue boxes */
+    padding: 10px; /* Add padding inside the issue box */
+    background: #fff; /* White background color */
 }
 
 .issue h2 {
-    margin: 0;
+    margin: 0; /* Remove default margins */
 }
 
+/* Issue description and status styling */
 .issue p {
-    margin: 5px 0;
+    margin: 5px 0; /* Space between paragraphs */
 }
 
 .issue-status {
-    font-weight: bold;
+    font-weight: bold; /* Bold font for the issue status */
 }
 
+/* Space between reporter info and the bottom */
 .issue p:last-of-type {
-    margin-top: 30px; /* Add some space between the reporter info and the bottom */
+    margin-top: 30px; /* Add some space */
 }
 
 /* Feedback Form Styles */
 .issue form {
-    margin-top: 10px;
+    margin-top: 10px; /* Space between issue details and the feedback form */
 }
 
 .issue form textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    width: 100%; /* Full width for the textarea */
+    padding: 10px; /* Padding inside the textarea */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light grey border */
 }
 
 .issue form button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background: #020298;
-    color: white;
-    cursor: pointer;
+    margin-top: 10px; /* Space above the button */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background: #020298; /* Dark blue background color */
+    color: white; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Hover effect for feedback form button */
 .issue form button:hover {
-    background: #0301b4;
+    background: #0301b4; /* Slightly lighter blue on hover */
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+/* Dropdown button */
+.dropdown-toggle {
+    background-color: #020298;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Change the background color on hover */
+.dropdown-toggle:hover {
+    background-color: #0301b4;
 }

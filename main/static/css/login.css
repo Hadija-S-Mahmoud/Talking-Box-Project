@@ -1,68 +1,79 @@
+/* login.css */
+
+/* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0c0e8d;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #fada0e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #0c0e8d; /* Dark blue background color */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* No repeat for the background image */
+    color: #fada0e; /* Light yellow text color */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
 }
 
+/* Margin for the header */
 header {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below the header */
 }
 
+/* Container for login form */
 .container {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    color: #fada0e;
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width for the container */
+    text-align: center; /* Center text */
+    color: #fada0e; /* Light yellow text color */
 }
 
+/* Form styling */
 form {
-    padding: 20px;
+    padding: 20px; /* Add padding inside the form */
 }
 
+/* Form label styling */
 form label {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-style: italic;
+    margin-bottom: 10px; /* Space below the label */
+    font-size: 18px; /* Larger font size for labels */
+    font-style: italic; /* Italicize the labels */
 }
 
+/* Input and button styling */
 form input[type="text"],
 form input[type="password"],
 form input[type="submit"],
 form button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    width: 100%; /* Full width for inputs and buttons */
+    padding: 10px; /* Padding inside inputs and buttons */
+    font-size: 16px; /* Font size for inputs and buttons */
+    margin-bottom: 20px; /* Space between form elements */
 }
 
+/* Submit button and additional buttons styling */
 form input[type="submit"],
 form button,
 .adminlogin-button, .signup-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin: 10px;
-    cursor: pointer;
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    margin: 10px; /* Space around the buttons */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Hover effect for submit button and additional buttons */
 form input[type="submit"]:hover,
 form button:hover,
 .adminlogin-button:hover, .signup-button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
+/* Error message styling */
 .error {
-    color: red;
-    margin: 10px 0;
+    color: red; /* Red text color for error messages */
+    margin: 10px 0; /* Space around error messages */
 }

@@ -1,179 +1,193 @@
-/* main/static/css/style.css */
+/* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #e7cd07;
-    color: #333;
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    line-height: 1.6; /* Set line height for readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #e7cd07; /* Yellow background color */
+    color: #333; /* Dark text color for contrast */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange elements in a column */
 }
 
 /* Sidebar styles */
 .sidebar {
-    position: sticky;
-    top: 100px;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #e7cd07;
-    box-sizing: border-box;
-    padding: 20px;
-   
+    position: sticky; /* Stick the sidebar to the top */
+    top: 100px; /* Position it 100px from the top */
+    left: 0; /* Align it to the left */
+    width: 200px; /* Set a fixed width for the sidebar */
+    height: 100%; /* Full height of the viewport */
+    background-color: #e7cd07; /* Yellow background color */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    padding: 20px; /* Add padding inside the sidebar */
 }
 
+/* Sidebar list styling */
 .sidebar ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
+/* Sidebar list item styling */
 .sidebar ul li {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space between list items */
 }
 
+/* Sidebar links styling */
 .sidebar ul li a {
-    color: #020298;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
+    color: #020298; /* Dark blue text color for links */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Block display for links */
+    padding: 10px; /* Add padding inside the links */
+    border-radius: 5px; /* Rounded corners */
 }
 
+/* Hover effect for sidebar links */
 .sidebar ul li a:hover {
-    background: #e7cd07;
-    color: #020298;
+    background: #e7cd07; /* Yellow background on hover */
+    color: #020298; /* Dark blue text color on hover */
 }
 
 /* Header styles */
 header {
-    background-color: #020298;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #020298; /* Dark blue background for the header */
+    color: white; /* White text color */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space between logo and menu */
+    position: sticky; /* Stick the header to the top */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
-/* Header text alignment and padding */
+/* Logo styling */
 header .logo {
-    height: 100px;
-    width: 200px;
-    margin-right: 20px;
+    height: 100px; /* Set a fixed height for the logo */
+    width: 200px; /* Set a fixed width for the logo */
+    margin-right: 20px; /* Space between the logo and the menu */
 }
 
+/* Top-right menu container styling */
+header .menu {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically centered */
+}
+
+/* Top-right menu links styling */
 header .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 5px; /* Space between the links */
+    padding: 10px 15px; /* Add padding inside the links */
+    border-radius: 5px; /* Rounded corners for the links */
 }
 
 /* Hover effect for menu links */
 header .menu a:hover {
-    text-decoration: underline;
+    background-color: #0303e9; /* Slightly lighter blue on hover */
+    text-decoration: underline; /* Underline links on hover */
 }
 
 /* Main content styles */
 main {
     margin-left: 200px; /* Adjust based on the width of the sidebar */
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px; /* Add padding inside the main content */
+    background: #fff; /* White background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     border-bottom: 1px;
-    text-align: center;
-    margin-top: -260px;
+    text-align: center; /* Center text */
+    margin-top: -260px; /* Adjust for positioning */
 }
 
 /* Section styling */
 .section {
-    padding: 1px 0;
-    border-bottom: 1px #e7cd07;
+    padding: 1px 0; /* Padding for sections */
+    border-bottom: 1px #e7cd07; /* Yellow border for sections */
 }
 
 /* Hero text styling */
 .hero-text h1, .hero-text h2 {
-    margin: 0;
-    padding: 5px 0;
+    margin: 0; /* Remove default margins */
+    padding: 5px 0; /* Padding for headings */
 }
 
 .hero-text p {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 800px; /* Limit the width of the text */
+    margin: 20px auto; /* Center text and add vertical margin */
 }
 
 /* Button styles */
 .login-signup {
-    text-align: center;
-    margin: 20px 0;
+    text-align: center; /* Center text */
+    margin: 20px 0; /* Space around the buttons */
 }
 
 .login-button, .signup-button, .adminlogin-button, .emergency-button, .about-button {
-    background-color: #020298;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    margin: 5px;
-    display: inline-block;
+    background-color: #020298; /* Dark blue background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside buttons */
+    text-decoration: none; /* Remove underline from links */
+    margin: 5px; /* Space around the buttons */
+    display: inline-block; /* Display as inline-block elements */
 }
 
 /* Hover effect for buttons */
 .login-button:hover, .signup-button:hover, .adminlogin-button:hover, .emergency-button:hover, .about-button:hover {
-    background-color: #0303e9;
+    background-color: #0303e9; /* Slightly lighter blue on hover */
 }
 
 /* Heading styles */
 h1 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 2em; /* Font size for main headings */
+    text-align: center; /* Center text */
 }
 
 h2 {
-    font-size: 2em;
-    text-align: center;
+    font-size: 2em; /* Font size for sub-headings */
+    text-align: center; /* Center text */
 }
 
+/* List styling */
 ul {
-    list-style: none;
-    padding: 0;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
 /* Footer styles */
 footer {
-    background-color: #020298;
-    color: #fff;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background-color: #020298; /* Dark blue background for the footer */
+    color: #fff; /* White text color */
+    padding: 10px; /* Add padding inside the footer */
+    position: relative; /* Relative positioning for footer */
+    bottom: 0; /* Stick to the bottom of the page */
+    width: 100%; /* Full width */
 }
+
 /* Footer content styling */
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
 }
 
 /* Social media links styling */
 .footer-content .social-media ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
 }
 
 .footer-content .social-media ul li {
-    display: inline;
-    margin: 0 10px;
+    display: inline; /* Inline list items */
+    margin: 0 10px; /* Space between list items */
 }
 
 .footer-content .social-media ul li a {
-    color: white;
-    text-decoration: none;
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
 }
 
 .footer-content ul li a {
-    color: white;
-    text-decoration: none;
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
 }
-

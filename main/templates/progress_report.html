@@ -1,0 +1,29 @@
+<!-- templates/progress_report.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Report for Issue {{ issue.id }}</title>
+    <link rel="stylesheet" href="{% static 'css/progress_report.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Progress Report for Issue {{ issue.id }}</h1>
+        <div class="menu">
+            <a href="{% url 'admin:main_issue_changelist' %}">Back to Issue List</a>
+        </div>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Report</button>
+        </form>
+        <a href="{% url 'admin:main_issue_changelist' %}">Back to Issue List</a>
+    </main>
+</body>
+</html>

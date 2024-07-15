@@ -1,101 +1,106 @@
 /* main/static/css/emergency.css */
+
 /* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #e7cd07;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Set the font family */
+    text-align: center; /* Center align text */
+    background-color: #e7cd07; /* Set the background color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 /* Header styling */
 header {
-    background-color: #020298;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #020298; /* Set the background color of the header */
+    color: white; /* Set the text color of the header */
+    padding: 20px; /* Set the padding */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space items out horizontally */
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick the header to the top */
+    z-index: 1000; /* Ensure the header stays on top */
 }
+
+/* Header title styling */
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #e7cd07;
+    margin: 0; /* Remove default margin */
+    font-size: 2.5em; /* Set the font size */
+    color: #e7cd07; /* Set the text color */
 }
+
 /* Logo styling */
 header .logo {
-    height: 100px;
-    width: 200px;
-    float: left;
-    margin-right: 20px;
+    height: 100px; /* Set the logo height */
+    width: 200px; /* Set the logo width */
+    float: left; /* Float the logo to the left */
+    margin-right: 20px; /* Add some margin to the right */
 }
+
 header {
-    text-align: center;
-    padding-bottom: 20px;
+    text-align: center; /* Center align text */
+    padding-bottom: 20px; /* Add padding to the bottom */
 }
 
 /* Top-right menu links */
 header .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+    color: white; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Add margin around links */
 }
 
 /* Hover effect for menu links */
 header .menu a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Add underline on hover */
 }
 
-/* Contacts container */
+/* Contacts container styling */
 .contacts {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
+    margin: 20px auto; /* Center the container */
+    width: 80%; /* Set the width */
+    max-width: 600px; /* Set the maximum width */
 }
 
-/* Individual contact item */
+/* Individual contact item styling */
 .contact-item {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    background-color: #fff; /* Set background color */
+    padding: 10px; /* Add padding */
+    margin: 10px 0; /* Add vertical margin */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Round the corners */
 }
 
 /* Contact icon styling */
 .contact-icon {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+    width: 50px; /* Set the icon width */
+    height: 50px; /* Set the icon height */
+    margin-right: 20px; /* Add margin to the right */
 }
 
-/* Contact info container */
+/* Contact info container styling */
 .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-start; /* Align items to the start */
 }
 
 /* Contact link styling */
 .contact-link {
-    text-decoration: none;
-    color: #020298;
-    font-size: 16px;
+    text-decoration: none; /* Remove underline */
+    color: #020298; /* Set the text color */
+    font-size: 16px; /* Set the font size */
 }
 
 /* Contact name styling */
 .contact-info span {
-    font-size: 18px;
-    color: #000;
-    margin-bottom: 5px;
+    font-size: 18px; /* Set the font size */
+    color: #000; /* Set the text color */
+    margin-bottom: 5px; /* Add margin to the bottom */
 }
 
 /* Contact link hover effect */
 .contact-link:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Add underline on hover */
 }

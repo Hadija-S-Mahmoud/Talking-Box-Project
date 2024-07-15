@@ -1,52 +1,64 @@
 # main/consumers.py
+
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from .models import Issue
 from twilio.rest import Client
 from django.conf import settings
+from .utils import send_sms
 
 class IssueConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.channel_layer.group_add(
-            "issue_updates",
+            'issue_updates',
             self.channel_name
         )
         await self.accept()
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(
-            "issue_updates",
+            'issue_updates',
             self.channel_name
         )
 
     async def receive(self, text_data):
-        data = json.loads(text_data)
-        issue_id = data['issue_id']
-        new_status = data['status']
+        text_data_json = json.loads(text_data)
+        issue_id = text_data_json['issue_id']
+        new_status = text_data_json['status']
+        progress_report = text_data_json.get('progress_report', '')
 
-        issue = await Issue.objects.get(id=issue_id)
+        # Update the issue status in the database
+        issue = Issue.objects.get(id=issue_id)
         issue.status = new_status
-        await issue.save()
+        issue.save()
 
-        # Send SMS using Twilio
-        client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
-        message = client.messages.create(
-            body=f"Issue {issue_id} status updated to {new_status}",
-            from_=settings.TWILIO_PHONE_NUMBER,
-            to='+254716167980'
-        )
-
+        # Notify WebSocket clients
         await self.channel_layer.group_send(
-            "issue_updates",
+            'issue_updates',
             {
-                'type': 'issue_update',
+                'type': 'issue_status_update',
                 'issue_id': issue_id,
                 'status': new_status,
+                'progress_report': progress_report
             }
         )
 
-    async def issue_update(self, event):
+        # Send SMS notification
+       # client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+        # if issue.reported_by.profile.phone:  # Ensure the user has a phone number
+          #  client.messages.create(
+           #     body=f'Issue #{issue_id} status updated to {new_status}. Progress Report: {progress_report}',
+            #    from_=settings.TWILIO_PHONE_NUMBER,
+             #   to=issue.reported_by.profile.phone  # Ensure the phone number includes the country code
+            #)
+
+    async def issue_status_update(self, event):
+        issue_id = event['issue_id']
+        new_status = event['status']
+        progress_report = event.get('progress_report', '')
+
         await self.send(text_data=json.dumps({
-            'issue_id': event['issue_id'],
-            'status': event['status']
+            'issue_id': issue_id,
+            'status': new_status,
+            'progress_report': progress_report
         }))

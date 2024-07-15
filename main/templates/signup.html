@@ -12,6 +12,7 @@
     <header>
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" style="height: 200px; width: 300px">
     </header>
+
     <div class="container">
         <form id="signupForm" action="{% url 'signup' %}" method="POST">
             {% csrf_token %}
@@ -28,7 +29,7 @@
             <input type="text" id="last_name" name="last_name" required><br>
 
             <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]+" required><br>
+            <input type="tel" id="phone" name="phone" pattern="\+?[0-9]{1,15}" required><br>
 
             <label for="ward">Ward:</label><br>
             <select id="ward" name="ward" required>

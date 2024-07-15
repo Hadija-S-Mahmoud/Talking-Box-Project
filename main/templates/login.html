@@ -2,18 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+    <!-- Viewport settings for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>Login - Talking Box</title>
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 <body>
-
     <header>
+        <!-- Logo image -->
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" style="height: 200px; width: 300px">
     </header>
 
+    <!-- Container for login form -->
     <div class="container">
+        <!-- Login form -->
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <label for="username">Username:</label><br>
@@ -25,15 +31,18 @@
             <input type="submit" value="Login">
         </form>
 
+        <!-- Display error message if login fails -->
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}
 
         <br>
+        <!-- Signup and Admin login buttons -->
         <button class="adminlogin-button" onclick="window.location.href='{% url 'signup' %}'">Don't have an account? Sign-up</button>
         <button class="signup-button" onclick="window.location.href='{% url 'adminlogin' %}'">Login as Admin</button>
     </div>
 
+    <!-- Link to external JavaScript file -->
     <script src="{% static 'js/login.js' %}"></script>
 </body>
 </html>

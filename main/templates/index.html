@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding -->
     <meta charset="UTF-8">
+    <!-- Viewport settings for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
     <title>Home</title>
+    <!-- Load Django static files -->
     {% load static %}
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
+        <!-- Logo image -->
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
-       
+        
+        <!-- Navigation menu -->
         <div class="menu">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'emergency' %}">Contacts</a>
-            <a href="{% url 'adminlogin' %}">Admin</a>
+            <a href="/admin/login/?next=/admin/">Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
         </div>
     </header>
 
     <!-- Sidebar menu -->
     <div class="sidebar">
         <ul>
-            <li><a href="{% url 'submit_issue' %}">Submit Issue</a></li>
+            <li><a href="{% url 'login' %}?next={% url 'submit_issue' %}">Submit Issue</a></li>
             <li><a href="{% url 'emergency' %}">Emergency</a></li>
             <li><a href="{% url 'issues' %}">Reported Issues</a></li>
         </ul>
     </div>
 
+    <!-- Main content area -->
     <main class="main-content">
+        <!-- Home section introductory text -->
         <section id="home" class="section">
             <div class="hero-text">
                 <h1>Welcome to The Talking Box!</h1>
@@ -44,6 +56,7 @@
             </div>
         </section>
 
+        <!-- About section with brief description -->
         <section id="about" class="section">
             <h2>About</h2>
             <p>The Talking Box system aims to provide a solution that empowers residents to report issues,</p>
@@ -52,6 +65,7 @@
             <a href="{% url 'about' %}" class="about-button">About Page</a>
         </section>
 
+        <!-- Contacts section for emergency information -->
         <section id="contacts" class="section">
             <h2>Contacts</h2>
             <p>Do you have an EMERGENCY?</p>
@@ -62,8 +76,10 @@
         </section>
     </main>
 
+    <!-- Footer with social media and contact info -->
     <footer>
         <div class="footer-content">
+            <!-- Social media links -->
             <div class="social-media">
                 <h3>Follow Us</h3>
                 <ul>
@@ -72,6 +88,7 @@
                     <li><a href="#">Instagram</a></li>
                 </ul>
             </div>
+            <!-- Contact information -->
             <div class="contact-info">
                 <h3>Contact Us</h3>
                 <p>Email: talkingbox@gmail.com</p>
@@ -80,6 +97,7 @@
         </div>
     </footer>
 
+    <!-- External scripts for chat functionality -->
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/c2d7d5f3-4767-4bd5-8e77-e949280ee393/webchat/config.js" defer></script>
 </body>

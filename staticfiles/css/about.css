@@ -1,73 +1,82 @@
 /* main/static/css/about.css */
+
+/* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #e7cd07;
-    color: #333;
+    font-family: Arial, sans-serif; /* Set the font family */
+    line-height: 1.6; /* Set the line height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #e7cd07; /* Set the background color */
+    color: #333; /* Set the text color */
 }
 
+/* Header styling */
 header {
-    background-color: #020298;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #020298; /* Set the background color of the header */
+    color: white; /* Set the text color of the header */
+    padding: 20px; /* Set the padding */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space items out horizontally */
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stick the header to the top */
+    z-index: 1000; /* Ensure the header stays on top */
 }
+
+/* Header title styling */
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #e7cd07;
+    margin: 0; /* Remove default margin */
+    font-size: 2.5em; /* Set the font size */
+    color: #e7cd07; /* Set the text color */
 }
 
 /* Logo styling */
 header .logo {
-    height: 100px;
-    width: 200px;
-    float: left;
-    margin-right: 20px;
+    height: 100px; /* Set the logo height */
+    width: 200px; /* Set the logo width */
+    float: left; /* Float the logo to the left */
+    margin-right: 20px; /* Add some margin to the right */
 }
+
 header {
-    text-align: center;
-    padding-bottom: 20px;
+    text-align: center; /* Center align text */
+    padding-bottom: 20px; /* Add padding to the bottom */
 }
 
 /* Top-right menu links */
 header .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+    color: white; /* Set the text color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Add margin around links */
 }
 
 /* Hover effect for menu links */
 header .menu a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Add underline on hover */
 }
 
+/* Container styling */
 .container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 800px; /* Set the maximum width */
+    margin: 30px auto; /* Center the container */
+    padding: 20px; /* Add padding */
+    background: #fff; /* Set background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Add a subtle shadow */
 }
 
+/* Main paragraph styling */
 main p {
-    margin: 50px 0;
-    text-align: justify;
+    margin: 50px 0; /* Add vertical margin */
+    text-align: justify; /* Justify text */
 }
 
+/* Responsive styling */
 @media (max-width: 600px) {
     .container {
-        padding: 10px;
+        padding: 10px; /* Reduce padding on small screens */
     }
 
     header h1 {
-        font-size: 2em;
+        font-size: 2em; /* Reduce font size on small screens */
     }
 }

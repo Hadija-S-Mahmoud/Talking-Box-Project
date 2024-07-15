@@ -1,47 +1,55 @@
+/* signup.css */
+
+/* Basic styling for the body */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0c0e8d;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #fada0e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #0c0e8d; /* Dark blue background color */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat; /* No repeat for the background image */
+    color: #fada0e; /* Light yellow text color */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
 }
 
+/* Form styling */
 form {
-    padding: 20px;
+    padding: 20px; /* Add padding inside the form */
 }
 
+/* Form label styling */
 form label {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-style: italic;
+    margin-bottom: 10px; /* Space below the label */
+    font-size: 18px; /* Larger font size for labels */
+    font-style: italic; /* Italicize the labels */
 }
 
+/* Input and button styling */
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
 form input[type="submit"],
 form select,
 form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    width: 100%; /* Full width for inputs and selects */
+    padding: 10px; /* Padding inside inputs and selects */
+    font-size: 16px; /* Font size for inputs and selects */
+    margin-bottom: 20px; /* Space between form elements */
 }
 
+/* Submit button styling */
 form input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Hover effect for the submit button */
 form input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }

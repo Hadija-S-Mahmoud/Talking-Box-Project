@@ -1,0 +1,121 @@
+[
+{
+    "model": "main.profile",
+    "pk": 1,
+    "fields": {
+        "user": 4,
+        "phone": "0716167980",
+        "ward": "Ward 1"
+    }
+},
+{
+    "model": "main.profile",
+    "pk": 2,
+    "fields": {
+        "user": 5,
+        "phone": "0716167980",
+        "ward": "Ward 2"
+    }
+},
+{
+    "model": "main.profile",
+    "pk": 3,
+    "fields": {
+        "user": 6,
+        "phone": "+254716167980",
+        "ward": "Ward 1"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 1,
+    "fields": {
+        "issue": "Clogged drainage\r\n",
+        "image": "",
+        "ward": "Sarang'ombe",
+        "status": "Resolved",
+        "reporter": null,
+        "created_at": "2024-07-04T21:02:50.337Z"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 2,
+    "fields": {
+        "issue": "Poor drainage",
+        "image": "",
+        "ward": "Laini Saba",
+        "status": "In Progress",
+        "reporter": null,
+        "created_at": "2024-07-04T21:02:50.337Z"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 3,
+    "fields": {
+        "issue": "robbery increase\r\n",
+        "image": "",
+        "ward": "Makina",
+        "status": "Pending",
+        "reporter": null,
+        "created_at": "2024-07-04T21:02:50.337Z"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 21,
+    "fields": {
+        "issue": "Testing SMS",
+        "image": "",
+        "ward": "Sarang'ombe",
+        "status": "Pending",
+        "reporter": null,
+        "created_at": "2024-07-08T17:28:53.310Z"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 22,
+    "fields": {
+        "issue": "issue tracker testing",
+        "image": "",
+        "ward": "Woodley",
+        "status": "In Progress",
+        "reporter": null,
+        "created_at": "2024-07-08T19:50:11.582Z"
+    }
+},
+{
+    "model": "main.issue",
+    "pk": 23,
+    "fields": {
+        "issue": "test issue ",
+        "image": "",
+        "ward": "Lindi",
+        "status": "In Progress",
+        "reporter": null,
+        "created_at": "2024-07-10T10:26:46.606Z"
+    }
+},
+{
+    "model": "main.feedback",
+    "pk": 1,
+    "fields": {
+        "issue": 1,
+        "user": 1,
+        "content": "the drainage needs immediate action",
+        "created_at": "2024-07-08T20:54:07.506Z"
+    }
+},
+{
+    "model": "main.feedback",
+    "pk": 2,
+    "fields": {
+        "issue": 1,
+        "user": 1,
+        "content": "action taken",
+        "created_at": "2024-07-08T21:37:39.478Z"
+    }
+}
+]

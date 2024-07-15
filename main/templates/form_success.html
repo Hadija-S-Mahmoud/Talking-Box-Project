@@ -5,27 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issue Submitted</title>
+    <!-- Load static files -->
     {% load static %}
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="{% static 'css/form_success.css' %}">
 </head>
 <body>
+    <!-- Header section -->
     <header>
+        <!-- Logo -->
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <!-- Page title -->
         <h1>Issue Submitted Successfully</h1>
+        <!-- Navigation menu -->
         <div class="menu">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'emergency' %}">Contacts</a>
-            <a href="{% url 'adminlogin' %}">Admin</a>
+            <a href="/admin/login/?next=/admin/">Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
         </div>
     </header>
 
+    <!-- Main content container -->
     <div class="container">
-    <main>
-        <p>Thank you for reporting the issue. We have received your issue: "{{ issue }}" from the "{{ ward }}" ward.</p>
-        <p>We will address it as soon as possible. Thank you for your contribution to improving the community.</p>
-    </main>
+        <main>
+            <p>Thank you for reporting the issue. We have received your issue: "{{ issue }}" from the "{{ ward }}" ward.</p>
+            <p>We will address it as soon as possible. Thank you for your contribution to improving the community.</p>
+            <a href="{% url 'issues' %}" class="success-button">View Your Issue List</a>
+        </main>
     </div>
-
 </body>
 </html>

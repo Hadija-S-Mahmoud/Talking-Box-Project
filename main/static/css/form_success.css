@@ -1,79 +1,82 @@
-/* main/static/css/style.css */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #e7cd07;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-}
+/* main/static/css/form_success.css */
 
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif; /* Set the default font for the page */
+    line-height: 1.6; /* Set line height for readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    background-color: #e7cd07; /* Yellow background color */
+    color: #333; /* Dark text color for contrast */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange elements in a column */
+}
 
 /* Header styles */
 header {
-    background-color: #020298;
-    color: #e7cd07;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #020298; /* Dark blue background for the header */
+    color: #e7cd07; /* Yellow text color for the header */
+    padding: 20px; /* Add padding for spacing */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and menu */
+    position: sticky; /* Stick the header to the top */
+    top: 0; /* Position it at the top */
+    z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
-/* Header text alignment and padding */
+/* Logo styling */
 header .logo {
-    height: 100px;
-    width: 200px;
-    margin-right: 20px;
+    height: 100px; /* Set a fixed height for the logo */
+    width: 200px; /* Set a fixed width for the logo */
+    margin-right: 20px; /* Space between the logo and the menu */
 }
 
+/* Top-right menu links styling */
 header .menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Space between the links */
 }
 
 /* Hover effect for menu links */
 header .menu a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline links on hover */
 }
 
+/* Container for the success message */
 .container {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 30px auto; /* Center the container and add vertical margin */
+    padding: 20px; /* Add padding inside the container */
+    background: #fff; /* White background color for the container */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 /* Main content styles */
 main {
-    padding: 20px;
-    color: black;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-bottom: 1px;
-    text-align: center;
-    margin-top: 20px;
+    padding: 20px; /* Add padding inside the main content */
+    color: black; /* Black text color */
+    background: white; /* White background color */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-bottom: 1px; /* Add a bottom border */
+    text-align: center; /* Center text */
+    margin-top: 20px; /* Add vertical margin at the top */
 }
 
 /* Section styling */
 .section {
-    padding: 1px 0;
-    border-bottom: 1px #e7cd07;
+    padding: 1px 0; /* Padding for sections */
+    border-bottom: 1px #e7cd07; /* Yellow border for sections */
 }
 
 /* Hero text styling */
 .hero-text h1, .hero-text h2 {
-    margin: 0;
-    padding: 5px 0;
+    margin: 0; /* Remove default margins */
+    padding: 5px 0; /* Padding for headings */
 }
 
 .hero-text p {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 800px; /* Limit the width of the text */
+    margin: 20px auto; /* Center text and add vertical margin */
 }

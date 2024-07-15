@@ -5,22 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About The Talking Box System</title>
+    <!-- Load static files -->
     {% load static %}
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
 </head>
 <body>
-     <!-- Header section -->
-     <header>
+    
+    <!-- Header section -->
+    <header>
+        <!-- Logo -->
         <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+
+        <!-- Page title -->
         <h1>About The Talking Box System</h1>
+
+        <!-- Navigation menu -->
         <div class="menu">
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'emergency' %}">Contacts</a>
-            <a href="{% url 'adminlogin' %}">Admin</a>
+            <a href="/admin/login/?next=/admin/">Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
         </div>
     </header>
 
+    <!-- Main content container -->
     <div class="container">
         <main>
             <p>Welcome to the Talking Box System, where we have a commitment to community development and sustainable change. The transformative initiative, the Talking Box, has been a powerful tool for community members to articulate their challenges, enabling us to address and resolve these issues effectively. Traditionally, this program has relied on physical submissions of written concerns. Recognizing the potential for greater impact, we are excited to introduce a digital version of the Talking Box program through this website, aiming to boost connectivity, inclusivity, and efficiency.</p>
@@ -32,6 +44,8 @@
             <p>Transitioning to this digital platform for the Talking Box program will significantly reduce paper usage and broaden our reach within the community. This approach saves time by enabling instant data access and ensures that urgent issues are addressed promptly, aligning perfectly with our mission to enhance community development through innovative and sustainable solutions. We are thrilled to embrace this digital future, enhancing our ability to connect with and serve the community more effectively. Thank you for joining us on this journey towards a more connected and empowered Kibra Constituency.</p>
         </main>
     </div>
+
+    <!-- Link to external JavaScript file -->
     <script src="{% static 'js/about.js' %}"></script>
 </body>
 </html>

@@ -17,16 +17,24 @@
                 const issueId = data.issue_id;
                 const newStatus = data.status;
 
-                // Update the issue status on the page
                 const issueElement = document.querySelector(`#issue-${issueId}`);
                 if (issueElement) {
                     issueElement.querySelector('.issue-status').textContent = `Status: ${newStatus}`;
+                    issueElement.querySelector('.issue-progress-report').textContent = `Progress Report: ${data.progress_report}`;
                 }
             };
 
             issueSocket.onclose = function(e) {
                 console.error('Issue WebSocket closed unexpectedly');
             };
+
+            const issueHeaders = document.querySelectorAll('.issue-header');
+            issueHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const issueDetails = this.nextElementSibling;
+                    issueDetails.style.display = issueDetails.style.display === 'none' ? 'block' : 'none';
+                });
+            });
         });
     </script>
 </head>
@@ -38,7 +46,10 @@
             <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'emergency' %}">Contacts</a>
-            <a href="{% url 'adminlogin' %}">Admin</a>
+            <a href="/admin/login/?next=/admin/">Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
         </div>
     </header>
 
@@ -46,25 +57,31 @@
         <div class="issue-list">
             {% for issue in issues %}
                 <div id="issue-{{ issue.id }}" class="issue">
-                    <h2>{{ issue.issue }}</h2>
-                    <p>{{ issue.description }}</p>
-                    <p class="issue-status">Status: {{ issue.status }}</p>
-                    <p>Reported by: 
-                        {% if issue.reporter %}
-                            {{ issue.reporter.username }}
-                        {% else %}
-                            Anonymous
-                        {% endif %}
-                    </p>
-                    <p>Ward: {{ issue.ward }}</p>
-                    
-                    <form method="post" action="{% url 'issues' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="issue_id" value="{{ issue.id }}">
-                        {{ form.content.label_tag }}
-                        {{ form.content }}
-                        <button type="submit">Submit Feedback</button>
-                    </form>
+                    <div class="issue-header">
+                        <h2>{{ issue.issue }}</h2>
+                        <p class="issue-status">Status: {{ issue.status }}</p>
+                    </div>
+                    <div class="issue-details" style="display: none;">
+                        <p>{{ issue.description }}</p>
+                        <p class="issue-progress-report">Progress Report: {{ issue.progress_report }}</p>
+                        <p>Reported by: 
+                            {% if issue.reported_by %}
+                                {{ issue.reported_by.username }}
+                            {% else %}
+                                Anonymous
+                            {% endif %}
+                        </p>
+                        <p>Ward: {{ issue.ward }}</p>
+                        <p>Location: {{ issue.address }}</p>
+                        
+                        <form method="post" action="{% url 'issues' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="issue_id" value="{{ issue.id }}">
+                            {{ form.content.label_tag }}
+                            {{ form.content }}
+                            <button type="submit">Submit Feedback</button>
+                        </form>
+                    </div>
                 </div>
             {% endfor %}
         </div>

@@ -22,9 +22,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('adminlogin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('admin/', admin.site.urls),  # Admin site URL
+    #path('adminlogin/', include('main.urls')),
+    path('', include('main.urls')),  # Include URLs from the main app
 ]
 
-if settings.DEBUG:  # Serve media files only in development
+# Serve media files only in development
+if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
