@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const data = JSON.parse(e.data); // Parse the JSON data received from the server
         const issueId = data.issue_id; // Get the issue ID from the data
         const newStatus = data.status; // Get the new status from the data
+        const newProgressReport = data.progress_report; // Get the new progress report from data
 
         // Find the element for the issue and update its status on the page
         const issueElement = document.querySelector(`#issue-${issueId}`);
         if (issueElement) {
             issueElement.querySelector('.issue-status').textContent = `Status: ${newStatus}`;
+            issueElement.querySelector('.issue-progress-report').textContent = `Progress Report: ${newProgressReport}`;
         }
     };
 

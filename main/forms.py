@@ -31,6 +31,7 @@ class CustomUserCreationForm(UserCreationForm):
             raise forms.ValidationError("Username already taken.")
         return username
 
-class ProgressReportForm(forms.Form):
-    progress_report = forms.CharField(widget=forms.Textarea(attrs={'rows': 3, 'placeholder': 'Enter progress report here...'}))
-    status = forms.ChoiceField(choices=Issue.STATUS_CHOICES, widget=forms.Select(attrs={'placeholder': 'Select Status'}))
+class ProgressReportForm(forms.ModelForm):
+    class Meta:
+        model = Issue
+        fields = ['progress_report', 'status']

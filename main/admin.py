@@ -35,12 +35,13 @@ class IssueAdmin(admin.ModelAdmin):
                 progress_report = form.cleaned_data['progress_report']
                 status = form.cleaned_data['status']
                 issue.status = status
+                issue.progress_report = progress_report
                 issue.save()
                 Feedback.objects.create(issue=issue, content=progress_report, user=request.user)
                 self.send_issue_update([issue])
                 return redirect('admin:main_issue_changelist')  # Redirect to admin issues list
 
-        form = ProgressReportForm(initial={'progress_report': issue.feedbacks.latest('created_at').content if issue.feedbacks.exists() else '', 'status': issue.status})
+        form = ProgressReportForm(initial={'progress_report': issue.progress_report, 'status': issue.status})
         return render(request, 'progress_report.html', {'issue': issue, 'form': form})
 
     def get_urls(self):
@@ -66,13 +67,14 @@ class IssueAdmin(admin.ModelAdmin):
         channel_layer = get_channel_layer()
         for issue in queryset:
             async_to_sync(channel_layer.group_send)(
-                "issue_updates", 
-                {
-                    "type": "issue.update", 
-                    "issue_id": issue.id, 
-                    "status": issue.status
-                }
-            )
+            "issue_updates", 
+            {
+                "type": "issue.update", 
+                "issue_id": issue.id, 
+                "status": issue.status,
+                "progress_report": issue.progress_report or "",
+            }
+        )
 
 admin.site.register(Issue, IssueAdmin)
 admin.site.register(Profile)

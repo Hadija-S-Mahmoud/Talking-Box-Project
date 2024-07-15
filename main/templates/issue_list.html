@@ -63,7 +63,7 @@
                     </div>
                     <div class="issue-details" style="display: none;">
                         <p>{{ issue.description }}</p>
-                        <p class="issue-progress-report">Progress Report: {{ issue.progress_report }}</p>
+                        <p class="issue-progress-report">Progress Report: {{ issue.progress_report|default:"No progress report available" }}</p>
                         <p>Reported by: 
                             {% if issue.reported_by %}
                                 {{ issue.reported_by.username }}
@@ -72,7 +72,6 @@
                             {% endif %}
                         </p>
                         <p>Ward: {{ issue.ward }}</p>
-                        <p>Location: {{ issue.address }}</p>
                         
                         <form method="post" action="{% url 'issues' %}">
                             {% csrf_token %}
