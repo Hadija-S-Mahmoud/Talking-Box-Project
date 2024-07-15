@@ -15,7 +15,7 @@ class FeedbackAdmin(admin.ModelAdmin):
 
 # Define the admin interface for the Issue model
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ('id', 'issue', 'category', 'ward', 'status', 'image', 'reported_by', 'created_at', 'address', 'view_progress_report_button')  # Added custom button
+    list_display = ('id', 'issue', 'category', 'ward', 'status', 'image', 'reported_by', 'created_at', 'address', 'view_progress_report_button')
     list_filter = ('status', 'ward', 'category')
     search_fields = ('issue', 'ward', 'reported_by__username', 'category')
     actions = ['mark_as_in_progress', 'mark_as_resolved', 'mark_as_pending']
@@ -73,6 +73,7 @@ class IssueAdmin(admin.ModelAdmin):
                 "issue_id": issue.id, 
                 "status": issue.status,
                 "progress_report": issue.progress_report or "",
+                "address": issue.address or "",
             }
         )
 

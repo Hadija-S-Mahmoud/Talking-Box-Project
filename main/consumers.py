@@ -43,15 +43,6 @@ class IssueConsumer(AsyncWebsocketConsumer):
             }
         )
 
-        # Send SMS notification
-       # client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
-        # if issue.reported_by.profile.phone:  # Ensure the user has a phone number
-          #  client.messages.create(
-           #     body=f'Issue #{issue_id} status updated to {new_status}. Progress Report: {progress_report}',
-            #    from_=settings.TWILIO_PHONE_NUMBER,
-             #   to=issue.reported_by.profile.phone  # Ensure the phone number includes the country code
-            #)
-
     async def issue_status_update(self, event):
         issue_id = event['issue_id']
         new_status = event['status']
@@ -60,5 +51,6 @@ class IssueConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'issue_id': issue_id,
             'status': new_status,
-            'progress_report': progress_report
+            'progress_report': progress_report,
+            'address': address,
         }))

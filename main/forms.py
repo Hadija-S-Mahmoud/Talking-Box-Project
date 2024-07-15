@@ -34,4 +34,5 @@ class CustomUserCreationForm(UserCreationForm):
 class ProgressReportForm(forms.ModelForm):
     class Meta:
         model = Issue
-        fields = ['progress_report', 'status']
+        fields = ['progress_report', 'status', 'address']
+

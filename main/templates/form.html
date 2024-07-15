@@ -88,6 +88,7 @@
         <!-- Geolocation data (hidden inputs) -->
         <input type="hidden" id="latitude" name="latitude">
         <input type="hidden" id="longitude" name="longitude">
+        <!-- Hidden input for address, automatically filled using OpenStreetMap -->
         <input type="hidden" id="address" name="address">
 
         <!-- Submit button -->
@@ -146,7 +147,7 @@
                         .then(response => response.json())
                         .then(data => {
                             if (data.address) {
-                                document.getElementById('address').value = data.display_name;
+                                document.getElementById('address').value = data.display_name; // Populate the address field
                             }
                         })
                         .catch(error => console.error('Error fetching address:', error));

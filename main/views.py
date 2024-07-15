@@ -9,6 +9,7 @@ from .models import Issue, Feedback, Profile
 from .forms import FeedbackForm, ProgressReportForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.core.files.storage import default_storage
 
 # View for the home page
 def index(request):
@@ -31,8 +32,9 @@ def submit_issue(request):
         category = request.POST.get('category')
         image_option = request.POST.get('imageOption')
         image = request.FILES.get('image') if image_option == 'upload' else None
-        
-        new_issue = Issue(issue=issue, ward=ward, category=category, image=image, reported_by=request.user)
+        address = request.POST.get('address')
+
+        new_issue = Issue(issue=issue, ward=ward, category=category, image=image, address=address, reported_by=request.user)
         new_issue.save()
         return render(request, 'form_success.html', {'issue': issue, 'ward': ward})
     return render(request, 'form.html')
@@ -118,8 +120,10 @@ def progress_report(request, issue_id):
         if form.is_valid():
             progress_report = form.cleaned_data['progress_report']
             status = form.cleaned_data['status']
+            address = form.cleaned_data.get('address', issue.address)
             issue.status = status
             issue.progress_report = progress_report
+            issue.address = address
             issue.save()
 
             send_mail(
@@ -131,7 +135,7 @@ def progress_report(request, issue_id):
             )
             return redirect('issues')
     else:
-        form = ProgressReportForm(initial={'status': issue.status, 'progress_report': issue.progress_report})
+        form = ProgressReportForm(initial={'status': issue.status, 'progress_report': issue.progress_report, 'address': issue.address})
 
     return render(request, 'progress_report.html', {'issue': issue, 'form': form})
 

@@ -32,25 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Add a geocoder control to the map
-    const geocoder = L.Control.Geocoder.nominatim();
-    const marker = L.marker([0, 0], { draggable: true }).addTo(map);
-
-    // Update latitude and longitude fields and map center on marker drag
-    marker.on('dragend', () => {
-        const latLng = marker.getLatLng();
-        document.getElementById('latitude').value = latLng.lat;
-        document.getElementById('longitude').value = latLng.lng;
-        fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latLng.lat}&lon=${latLng.lng}&format=json`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.address) {
-                    document.getElementById('address').value = data.display_name;
-                }
-            })
-            .catch(error => console.error('Error fetching address:', error));
-    });
-
     // Get geolocation data
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -59,16 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('latitude').value = lat;
             document.getElementById('longitude').value = lon;
 
-            // Center the map on the current location and add a marker
+            // Update the map view
             map.setView([lat, lon], 13);
-            marker.setLatLng([lat, lon]);
+            L.marker([lat, lon]).addTo(map);
 
-            // Fetch address from latitude and longitude
+            // Fetch address from latitude and longitude using Nominatim API
             fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.address) {
-                        document.getElementById('address').value = data.display_name;
+                        document.getElementById('address').value = data.display_name; // Populate the address field
                     }
                 })
                 .catch(error => console.error('Error fetching address:', error));
