@@ -47,7 +47,7 @@ def admin_login(request):
 # View for displaying the list of issues and handling feedback submission
 @login_required
 def issues(request):
-    issues = Issue.objects.all() 
+    issues = Issue.objects.filter(reported_by=request.user)  # Filter issues by the logged-in user
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():

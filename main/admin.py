@@ -7,6 +7,13 @@ from channels.layers import get_channel_layer
 from .models import Issue, Profile, Feedback
 from django.utils.html import format_html
 from .forms import ProgressReportForm
+from django import forms
+
+# Define the progress report form
+class ProgressReportForm(forms.ModelForm):
+    class Meta:
+        model = Issue
+        fields = ['progress_report', 'status']
 
 # Define the admin interface for the Feedback model
 class FeedbackAdmin(admin.ModelAdmin):

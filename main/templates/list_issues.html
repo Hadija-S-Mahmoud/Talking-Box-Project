@@ -15,7 +15,7 @@
     <tbody>
         {% for issue in issues %}
         <tr>
-            <td>{{ issue.category }}</td>
+            <td>{{ issue.get_category_display }}</td>
             <td>{{ issue.issue }}</td>
             <td>{{ issue.ward }}</td>
             <td>{{ issue.status }}</td>

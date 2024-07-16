@@ -80,3 +80,28 @@ main {
     max-width: 800px; /* Limit the width of the text */
     margin: 20px auto; /* Center text and add vertical margin */
 }
+
+/* Button list styles */
+.button-list {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange buttons in a column */
+    align-items: center; /* Center align items */
+}
+
+/* Button styles */
+.success-button {
+    background-color: #020298; /* Dark blue background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside buttons */
+    text-decoration: none; /* Remove underline from links */
+    margin: 10px 0; /* Vertical margin between buttons */
+    border-radius: 5px; /* Rounded corners for the buttons */
+    text-align: center; /* Center text inside the buttons */
+    display: block; /* Block display for buttons */
+    width: 200px; /* Fixed width for buttons */
+}
+
+/* Hover effect for buttons */
+.success-button:hover {
+    background-color: #0303e9; /* Slightly lighter blue on hover */
+}

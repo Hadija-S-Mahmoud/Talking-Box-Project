@@ -34,7 +34,10 @@
         <main>
             <p>Thank you for reporting the issue. We have received your issue: "{{ issue }}" from the "{{ ward }}" ward.</p>
             <p>We will address it as soon as possible. Thank you for your contribution to improving the community.</p>
-            <a href="{% url 'issues' %}" class="success-button">View Your Issue List</a>
+            <div class="button-list">
+                <a href="{% url 'issues' %}" class="success-button">View Your Issue List</a>
+                <a href="{% url 'submit_issue' %}" class="success-button">Report Another Issue</a>
+            </div>
         </main>
     </div>
 </body>

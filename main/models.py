@@ -67,7 +67,7 @@ class Issue(DirtyFieldsMixin, models.Model):
     reported_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)  # User who reported the issue
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp of when the issue was created
     address = models.TextField(blank=True, null=True)  # Address of the issue location
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default=HEALTH)  # Category of the issue
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)  # Category of the issue
     progress_report = models.TextField(blank=True, null=True)
 
     def __str__(self):
