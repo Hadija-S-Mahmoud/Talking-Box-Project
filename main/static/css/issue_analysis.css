@@ -1,6 +1,6 @@
-/* main/static/css/form_success.css */
+/* main/static/css/issue_analysis.css */
 
-
+/* Basic styling for the body */
 body {
     font-family: Arial, sans-serif; /* Set the default font for the page */
     line-height: 1.6; /* Set line height for readability */
@@ -44,7 +44,7 @@ header .menu a:hover {
     text-decoration: underline; /* Underline links on hover */
 }
 
-/* Container for the success message */
+/* Container for the chart */
 .container {
     max-width: 800px; /* Set a maximum width for the container */
     margin: 30px auto; /* Center the container and add vertical margin */
@@ -62,46 +62,4 @@ main {
     border-bottom: 1px; /* Add a bottom border */
     text-align: center; /* Center text */
     margin-top: 20px; /* Add vertical margin at the top */
-}
-
-/* Section styling */
-.section {
-    padding: 1px 0; /* Padding for sections */
-    border-bottom: 1px #e7cd07; /* Yellow border for sections */
-}
-
-/* Hero text styling */
-.hero-text h1, .hero-text h2 {
-    margin: 0; /* Remove default margins */
-    padding: 5px 0; /* Padding for headings */
-}
-
-.hero-text p {
-    max-width: 800px; /* Limit the width of the text */
-    margin: 20px auto; /* Center text and add vertical margin */
-}
-
-/* Button list styles */
-.button-list {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange buttons in a column */
-    align-items: center; /* Center align items */
-}
-
-/* Button styles */
-.success-button {
-    background-color: #020298; /* Dark blue background color */
-    color: white; /* White text color */
-    padding: 10px 20px; /* Padding inside buttons */
-    text-decoration: none; /* Remove underline from links */
-    margin: 10px 0; /* Vertical margin between buttons */
-    border-radius: 5px; /* Rounded corners for the buttons */
-    text-align: center; /* Center text inside the buttons */
-    display: block; /* Block display for buttons */
-    width: 200px; /* Fixed width for buttons */
-}
-
-/* Hover effect for buttons */
-.success-button:hover {
-    background-color: #0303e9; /* Slightly lighter blue on hover */
 }

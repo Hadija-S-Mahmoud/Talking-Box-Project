@@ -55,8 +55,26 @@ class IssueAdmin(admin.ModelAdmin):
         urls = super().get_urls()
         custom_urls = [
                 path('progress_report/<int:obj_id>/', self.admin_site.admin_view(self.view_progress_report), name='view_progress_report'),
+                path('issue-analysis/', self.admin_site.admin_view(self.issue_analysis_view))
         ]
         return custom_urls + urls
+    
+    def issue_analysis_view(self, request):
+        # Get the count of issues by status
+        total_issues = Issue.objects.count()
+        resolved_issues = Issue.objects.filter(status='Resolved').count()
+        pending_issues = Issue.objects.filter(status='Pending').count()
+        in_progress_issues = Issue.objects.filter(status='In Progress').count()
+        
+        # Prepare data for the chart
+        context = {
+            'total_issues': total_issues,
+            'resolved_issues': resolved_issues,
+            'pending_issues': pending_issues,
+            'in_progress_issues': in_progress_issues,
+        }
+        
+        return render(request, 'issue_analysis.html', context)
 
     def mark_as_in_progress(self, request, queryset):
         queryset.update(status='In Progress')

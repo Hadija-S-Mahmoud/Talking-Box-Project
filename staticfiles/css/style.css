@@ -13,7 +13,7 @@ body {
 /* Sidebar styles */
 .sidebar {
     position: sticky; /* Stick the sidebar to the top */
-    top: 100px; /* Position it 100px from the top */
+    top: 150px; /* Position it 100px from the top */
     left: 0; /* Align it to the left */
     width: 200px; /* Set a fixed width for the sidebar */
     height: 100%; /* Full height of the viewport */
@@ -97,7 +97,8 @@ main {
     box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     border-bottom: 1px;
     text-align: center; /* Center text */
-    margin-top: -260px; /* Adjust for positioning */
+    margin-top: -315px; /* Adjust for positioning */
+    left: 200px;
 }
 
 /* Section styling */

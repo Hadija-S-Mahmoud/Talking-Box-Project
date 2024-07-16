@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Analysis</title>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/issue_analysis.css' %}">
+    <!-- Load Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <!-- Logo -->
+        <img src="{% static 'images/TalkingBox1.png' %}" alt="Polycom Logo" class="logo">
+        <!-- Page title -->
+        <h1>Issue Analysis</h1>
+        <!-- Navigation menu -->
+        <div class="menu">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'emergency' %}">Contacts</a>
+            <a href="/admin/login/?next=/admin/">Admin</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Main content container -->
+    <div class="container">
+        <main>
+            <canvas id="issueChart" width="400" height="200"></canvas>
+            <script>
+                // Fetch the canvas element and create a 2D rendering context
+                var ctx = document.getElementById('issueChart').getContext('2d');
+
+                // Create a new Chart instance
+                var issueChart = new Chart(ctx, {
+                    type: 'pie',  // Chart type
+                    data: {
+                        labels: ['Resolved', 'Pending', 'In Progress'],  // Labels for the pie chart
+                        datasets: [{
+                            label: 'Issue Status',  // Chart legend
+                            data: [{{ resolved_issues }}, {{ pending_issues }}, {{ in_progress_issues }}],  // Data for the chart
+                            backgroundColor: [
+                                '#28a745',  // Green for Resolved
+                                '#dc3545',  // Red for Pending
+                                '#ffc107'   // Yellow for In Progress
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,  // Make the chart responsive
+                        plugins: {
+                            legend: {
+                                position: 'top',  // Position of the legend
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        var label = context.label || '';
+                                        var value = context.raw || 0;
+                                        return label + ': ' + value;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </main>
+    </div>
+</body>
+</html>

@@ -94,10 +94,13 @@ def signup(request):
         
         if User.objects.filter(username=username).exists():
             return JsonResponse({'error': 'Username already taken'}, status=400)
-        
+
         user = User.objects.create_user(username=username, password=password, email=email, first_name=first_name, last_name=last_name)
         if user:
-            profile = Profile.objects.create(user=user, phone=phone, ward=ward)
+            # Check if a Profile already exists for this user
+            if not Profile.objects.filter(user=user).exists():
+                Profile.objects.create(user=user, phone=phone, ward=ward)
+
             user = authenticate(username=username, password=password)
             if user is not None:
                 auth_login(request, user)
@@ -146,3 +149,20 @@ def list_issues(request):
         issues = issues.filter(category=category_filter)
 
     return render(request, 'list_issues.html', {'issues': issues})
+
+def issue_analysis(request):
+    # Get the count of issues by status
+    total_issues = Issue.objects.count()
+    resolved_issues = Issue.objects.filter(status='Resolved').count()
+    pending_issues = Issue.objects.filter(status='Pending').count()
+    in_progress_issues = Issue.objects.filter(status='In Progress').count()
+    
+    # Prepare data for the chart
+    context = {
+        'total_issues': total_issues,
+        'resolved_issues': resolved_issues,
+        'pending_issues': pending_issues,
+        'in_progress_issues': in_progress_issues,
+    }
+    
+    return render(request, 'issue_analysis.html', context)

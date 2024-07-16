@@ -20,6 +20,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),  # User logout page
     path('progress_report/<int:issue_id>/', views.progress_report, name='view_progress_report'),
     path('list_issues/', views.list_issues, name='list_issues'),
+    path('issue-analysis/', views.issue_analysis, name='issue_analysis'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # Serve static files
 
 # Serve media files only in development
