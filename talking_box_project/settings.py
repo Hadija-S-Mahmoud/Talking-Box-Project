@@ -140,11 +140,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-# Twilio configuration for sending SMS
-# TWILIO_ACCOUNT_SID = 'AC65c5f459d666fdd229a91c85721a398c'
-# TWILIO_AUTH_TOKEN = '5585744a66082536258651e164a50f85'
-# TWILIO_PHONE_NUMBER = '+13342924330'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
